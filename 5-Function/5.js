@@ -25,7 +25,9 @@ function increment(n) {
     return n + 1;
 }
 
+// this return a function.
 const squareThenIncrement = higherOrderFunction(square, increment);
+
 
 console.log(squareThenIncrement(5)); 
 
