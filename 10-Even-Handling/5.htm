@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Event Delegation</title>
+    <style>
+        body{
+            background-color: #0d1117;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+        <button>Button 4</button>
+      </div>
+      <ul>
+        <li>Bibek1</li>
+        <li>Bibek2</li>
+        <li>Bibek3</li>
+        <li>Bibek4</li>
+        <li>Bibek5</li>
+        <li>Bibek6</li>
+      </ul>
+
+      <div id="parent">Parent</div>
+
+      <script>
+        const div = document.querySelector('div')
+        div.addEventListener("click",(e) => {
+            if(e.target.tagName === 'BUTTON'){
+                console.log(e.target.innerText);
+            }
+        })
+
+        const ul = document.querySelector('ul')
+        ul.addEventListener("click", (e) => {
+            if(e.target.tagName === 'LI'){
+                console.log(e.target.innerText);
+            }
+        })
+
+        const parent = document.querySelector('#parent')
+        parent.addEventListener('click', (e) => {
+            if(e.target && e.target.matches('.child')){
+                console.log("Child Clicked...");
+            }
+        })
+
+        const newChild = document.createElement('div')
+        newChild.className = 'child'
+        newChild.innerText = 'dynamic child'
+        parent.appendChild(newChild)
+      </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        body{
+            background-color: #0d1117;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <p>day 10 </p>
+    <button>Click Me</button>
+
+    <img style="width: 200px;" src="../9-DOM/img1.png" alt="">
+
+    <script>
+        const para = document.querySelector('p');
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+            para.textContent = 'I was clicked';
+        });
+
+        const toggle = document.querySelector('img');
+        toggle.addEventListener("dblclick", () => {
+            if(toggle.style.width === '200px'){
+                toggle.style.width = '400px';
+            } else {
+                toggle.style.width = '200px';
+            }
+        })
+    </script>
+</body>
+</html>
